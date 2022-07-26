@@ -1,2 +1,0 @@
-PidFile /home/mpiuser/sshd.pid
-HostKey /home/mpiuser/.ssh/id_rsa
