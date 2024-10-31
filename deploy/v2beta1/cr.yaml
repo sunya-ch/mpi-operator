@@ -53,15 +53,6 @@ rules:
   - create
   - patch
 - apiGroups:
-  - apps
-  resources:
-  - statefulsets
-  verbs:
-  - create
-  - list
-  - update
-  - watch
-- apiGroups:
   - batch
   resources:
   - jobs
@@ -86,10 +77,31 @@ rules:
   verbs:
   - '*'
 - apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - '*'
+- apiGroups:
   - scheduling.incubator.k8s.io
   - scheduling.sigs.dev
+  - scheduling.volcano.sh
   resources:
   - queues
   - podgroups
   verbs:
   - '*'
+- apiGroups:
+  - scheduling.x-k8s.io
+  resources:
+  - podgroups
+  verbs:
+  - '*'
+- apiGroups:
+  - scheduling.k8s.io
+  resources:
+  - priorityclasses
+  verbs:
+  - get
+  - list
+  - watch
